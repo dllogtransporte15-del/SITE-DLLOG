@@ -551,8 +551,8 @@ export default function App() {
             <div className="space-y-8">
               <h5 className="font-black text-xs uppercase tracking-[0.3em] text-brand-primary">Contato</h5>
               <div className="space-y-6 text-white/60 font-medium">
-                <a href="tel:+550000000000" className="flex items-center gap-4 hover:text-white transition-colors group">
-                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-brand-primary transition-colors"><Phone className="w-4 h-4" /></div> (00) 0000-0000
+                <a href="tel:+5564993058754" className="flex items-center gap-4 hover:text-white transition-colors group">
+                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-brand-primary transition-colors"><Phone className="w-4 h-4" /></div> (64) 99305-8754
                 </a>
                 <a href="mailto:contato@dllog.com.br" className="flex items-center gap-4 hover:text-white transition-colors group">
                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-brand-primary transition-colors"><Mail className="w-4 h-4" /></div> contato@dllog.com.br
