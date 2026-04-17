@@ -1,0 +1,10 @@
+{
+  "name": "site-dllog-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix \"dllog---logística-e-tecnologia-para-o-agronegócio\"",
+    "build": "npm run build --prefix \"dllog---logística-e-tecnologia-para-o-agronegócio\"",
+    "install-all": "npm install --prefix \"dllog---logística-e-tecnologia-para-o-agronegócio\"",
+    "lint": "npm run lint --prefix \"dllog---logística-e-tecnologia-para-o-agronegócio\""
+  }
+}
