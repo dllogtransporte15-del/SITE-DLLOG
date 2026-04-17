@@ -10,7 +10,7 @@ const Logo: React.FC<LogoProps> = () => {
     <img
       src="/logo.png"
       alt="DLLOG Logo"
-      className="h-14 w-auto object-contain"
+      className="h-[84px] w-auto object-contain"
     />
   );
 };
