@@ -97,7 +97,7 @@ export default function App() {
         <div className="absolute inset-0 bg-gradient-to-b from-brand-secondary/70 via-brand-secondary/60 to-brand-secondary/80" />
 
         {/* ── Conteúdo centralizado ── */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center scale-[0.8]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
