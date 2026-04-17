@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #a67c52;
+  --color-brand-secondary: #635a56;
+  --color-brand-neutral: #faf9f7;
+  --color-brand-text: #4b4b4b;
+  --color-brand-accent: #9ba3af;
+  --color-brand-border: #e8e6e1;
+  --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Custom Leaflet Styling */
+.leaflet-popup-content-wrapper {
+  background: white !important;
+  color: #4b4b4b !important;
+  border-radius: 12px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.leaflet-container {
+  font-family: inherit !important;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-neutral text-brand-text selection:bg-brand-primary/20;
+  }
+}
