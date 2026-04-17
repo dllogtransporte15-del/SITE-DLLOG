@@ -67,7 +67,14 @@ export default function App() {
             <a href="#servicos" className="text-brand-text hover:text-brand-primary transition-colors hover:translate-y-[-1px]">Serviços</a>
           </div>
           {/* Botão Contato à direita */}
-          <a href="#contato" className="hidden md:inline-flex bg-brand-primary text-white px-6 py-2.5 rounded-full hover:bg-brand-secondary transition-all shadow-lg shadow-brand-primary/20 text-sm font-semibold tracking-wide">Contato</a>
+          <a 
+            href="https://wa.me/5564993058754" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="hidden md:inline-flex bg-brand-primary text-white px-6 py-2.5 rounded-full hover:bg-brand-secondary transition-all shadow-lg shadow-brand-primary/20 text-sm font-semibold tracking-wide"
+          >
+            Contato
+          </a>
         </div>
       </nav>
 
@@ -111,12 +118,22 @@ export default function App() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-9 py-4 bg-brand-primary text-white rounded font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all cursor-pointer shadow-xl shadow-brand-primary/30 text-base">
+              <a 
+                href="https://wa.me/5564993058754"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-9 py-4 bg-brand-primary text-white rounded font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all cursor-pointer shadow-xl shadow-brand-primary/30 text-base"
+              >
                 Agendar Demonstração <ArrowRight className="w-5 h-5" />
-              </button>
-              <button className="px-9 py-4 border-2 border-white/20 text-white hover:bg-white/10 rounded-xl font-bold transition-all cursor-pointer backdrop-blur-sm text-base">
+              </a>
+              <a 
+                href="https://wa.me/5564993058754"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-9 py-4 border-2 border-white/20 text-white hover:bg-white/10 rounded-xl font-bold transition-all cursor-pointer backdrop-blur-sm text-base text-center"
+              >
                 Falar com Especialista
-              </button>
+              </a>
             </div>
           </motion.div>
 
@@ -401,9 +418,14 @@ export default function App() {
                 ))}
               </div>
 
-              <button className="flex items-center gap-3 font-bold text-brand-primary hover:text-brand-secondary transition-colors group text-lg">
+              <a 
+                href="https://wa.me/5564993058754"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 font-bold text-brand-primary hover:text-brand-secondary transition-colors group text-lg"
+              >
                 Agendar Demonstração Gratuita <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
-              </button>
+              </a>
             </motion.div>
           </motion.div>
         </div>
@@ -516,9 +538,14 @@ export default function App() {
               <p className="text-white/80 text-lg mb-12 max-w-2xl mx-auto">
                 Deixe de lutar contra os processos e comece a dominá-los com a tecnologia DLLOG.
               </p>
-              <button className="px-10 py-5 bg-brand-primary text-white rounded font-bold text-lg hover:opacity-90 transition-all shadow-xl cursor-pointer uppercase tracking-widest">
+              <a 
+                href="https://wa.me/5564993058754"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-10 py-5 bg-brand-primary text-white rounded font-bold text-lg hover:opacity-90 transition-all shadow-xl cursor-pointer uppercase tracking-widest"
+              >
                 Agendar Demonstração
-              </button>
+              </a>
             </motion.div>
           </div>
         </div>
@@ -551,8 +578,16 @@ export default function App() {
             <div className="space-y-8">
               <h5 className="font-black text-xs uppercase tracking-[0.3em] text-brand-primary">Contato</h5>
               <div className="space-y-6 text-white/60 font-medium">
-                <a href="tel:+5564993058754" className="flex items-center gap-4 hover:text-white transition-colors group">
-                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-brand-primary transition-colors"><Phone className="w-4 h-4" /></div> (64) 99305-8754
+                <a 
+                  href="https://wa.me/5564993058754" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 hover:text-white transition-colors group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-brand-primary transition-colors">
+                    <Phone className="w-4 h-4" />
+                  </div> 
+                  (64) 99305-8754
                 </a>
                 <a href="mailto:contato@dllog.com.br" className="flex items-center gap-4 hover:text-white transition-colors group">
                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-brand-primary transition-colors"><Mail className="w-4 h-4" /></div> contato@dllog.com.br
