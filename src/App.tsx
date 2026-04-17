@@ -80,7 +80,7 @@ export default function App() {
 
 
       {/* Hero Section — Video Background Fullscreen */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
 
         {/* ── Vídeo de fundo ── */}
         <video
