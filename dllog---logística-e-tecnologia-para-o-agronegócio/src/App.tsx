@@ -55,81 +55,103 @@ export default function App() {
     <div className="min-h-screen font-sans selection:bg-brand-primary/30 selection:text-white">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-white backdrop-blur-md border-b border-brand-border">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative">
           <div className="flex items-center cursor-pointer">
             <Logo />
           </div>
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-wider">
-            <a href="#home" className="hover:text-brand-primary transition-colors hover:translate-y-[-1px]">Início</a>
-            <a href="#sobre" className="hover:text-brand-primary transition-colors hover:translate-y-[-1px]">Sobre</a>
-            <a href="#sistema" className="hover:text-brand-primary transition-colors hover:translate-y-[-1px]">Sistema</a>
-            <a href="#servicos" className="hover:text-brand-primary transition-colors hover:translate-y-[-1px]">Serviços</a>
-            <a href="#contato" className="bg-brand-primary text-white ml-4 px-6 py-2.5 rounded-full hover:bg-brand-secondary transition-all shadow-lg shadow-brand-primary/20">Contato</a>
+          {/* Links centralizados absolutamente */}
+          <div className="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-widest absolute left-1/2 -translate-x-1/2">
+            <a href="#home" className="text-brand-text hover:text-brand-primary transition-colors hover:translate-y-[-1px]">Início</a>
+            <a href="#sobre" className="text-brand-text hover:text-brand-primary transition-colors hover:translate-y-[-1px]">Sobre</a>
+            <a href="#sistema" className="text-brand-text hover:text-brand-primary transition-colors hover:translate-y-[-1px]">Sistema</a>
+            <a href="#servicos" className="text-brand-text hover:text-brand-primary transition-colors hover:translate-y-[-1px]">Serviços</a>
           </div>
+          {/* Botão Contato à direita */}
+          <a href="#contato" className="hidden md:inline-flex bg-brand-primary text-white px-6 py-2.5 rounded-full hover:bg-brand-secondary transition-all shadow-lg shadow-brand-primary/20 text-sm font-semibold tracking-wide">Contato</a>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section id="home" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(166,124,82,0.1),transparent_50%)]" />
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+
+      {/* Hero Section — Video Background Fullscreen */}
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+
+        {/* ── Vídeo de fundo ── */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/video.mp4" type="video/mp4" />
+        </video>
+
+        {/* ── Overlay gradiente escuro para legibilidade ── */}
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-secondary/70 via-brand-secondary/60 to-brand-secondary/80" />
+
+        {/* ── Conteúdo centralizado ── */}
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 text-brand-primary text-[11px] font-bold uppercase tracking-widest mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/20 border border-brand-primary/30 text-brand-primary text-[11px] font-bold uppercase tracking-widest mb-8 backdrop-blur-sm">
               <Zap className="w-3 h-3" />
               Inovação no Agronegócio
             </div>
-            <h1 className="text-5xl lg:text-5xl font-extrabold text-brand-secondary leading-[1.1] tracking-tighter mb-8">
-              Tecnologia que <span className="text-brand-primary">move o Agronegócio.</span>
+
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.05] tracking-tight mb-8">
+              Tecnologia que{" "}
+              <span className="text-brand-primary">move o Agronegócio.</span>
             </h1>
-            <p className="text-lg text-brand-text max-w-lg mb-10 leading-relaxed border-l-4 border-brand-primary pl-5">
-              Conectamos tecnologia de ponta com a experiência veterana para simplificar, otimizar e dar controle total ao seu transporte de grãos e fertilizantes.
+
+            <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-12 leading-relaxed">
+              Conectamos tecnologia de ponta com experiência para simplificar, otimizar e dar controle total ao seu transporte de grãos e fertilizantes.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="px-8 py-4 bg-brand-primary text-white rounded font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all cursor-pointer">
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="px-9 py-4 bg-brand-primary text-white rounded font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all cursor-pointer shadow-xl shadow-brand-primary/30 text-base">
                 Agendar Demonstração <ArrowRight className="w-5 h-5" />
               </button>
-              <button className="px-8 py-4 border-2 border-brand-secondary/10 hover:bg-white rounded-xl font-bold transition-all cursor-pointer">
+              <button className="px-9 py-4 border-2 border-white/20 text-white hover:bg-white/10 rounded-xl font-bold transition-all cursor-pointer backdrop-blur-sm text-base">
                 Falar com Especialista
               </button>
             </div>
           </motion.div>
-          <motion.div 
-             initial={{ opacity: 0, scale: 0.95 }}
-             animate={{ opacity: 1, scale: 1 }}
-             transition={{ duration: 0.8, delay: 0.2 }}
-             className="relative"
+
+          {/* Badge flutuante de estatística */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-16 inline-flex items-center gap-5 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-8 py-5 shadow-xl"
           >
-            <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative border-8 border-white bg-brand-secondary">
-              <video 
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-                className="w-full h-full object-cover sepia-[0.4] contrast-[1.1] saturate-[1.1]"
-              >
-                <source src="/video.mp4" type="video/mp4" />
-                Seu navegador não suporta vídeos.
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/30 to-transparent opacity-60" />
+            <div className="w-12 h-12 rounded-full bg-brand-primary/20 flex items-center justify-center text-brand-primary">
+              <TrendingUp className="w-6 h-6" />
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl flex items-center gap-4 border border-brand-neutral">
-              <div className="w-12 h-12 rounded-full md:w-16 md:h-16 bg-brand-primary/10 flex items-center justify-center text-brand-primary">
-                <TrendingUp className="w-6 h-6 md:w-8 md:h-8" />
-              </div>
-              <div>
-                <p className="text-sm text-brand-secondary/60 font-medium">Eficiência média</p>
-                <p className="text-xl md:text-2xl font-bold text-brand-secondary">+40% Otimização</p>
-              </div>
+            <div className="text-left">
+              <p className="text-white/60 text-sm font-medium">Eficiência média</p>
+              <p className="text-white font-extrabold text-2xl">+40% Otimização</p>
             </div>
-            <div className="absolute top-10 -right-4 bg-brand-secondary text-white p-4 rounded-xl shadow-lg hidden md:block animate-bounce shadow-brand-secondary/20">
-              <Truck className="w-6 h-6" />
+            <div className="w-px h-12 bg-white/20 mx-2" />
+            <div className="text-left">
+              <p className="text-white/60 text-sm font-medium">Experiência</p>
+              <p className="text-white font-extrabold text-2xl">+5 Anos</p>
             </div>
           </motion.div>
         </div>
+
+        {/* ── Seta scroll down ── */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40"
+        >
+          <span className="text-[10px] uppercase tracking-widest font-semibold">Scroll</span>
+          <div className="w-px h-10 bg-gradient-to-b from-white/40 to-transparent animate-pulse" />
+        </motion.div>
       </section>
 
       {/* Philosophy Section */}
@@ -211,44 +233,143 @@ export default function App() {
             <motion.div variants={slideInLeft} className="order-2 lg:order-1">
               <div className="relative group">
                 <div className="absolute -inset-4 bg-brand-primary/10 rounded-[2.5rem] blur-2xl group-hover:bg-brand-primary/20 transition-all" />
-                <div className="relative bg-brand-neutral rounded-[2.5rem] border border-brand-secondary/5 overflow-hidden shadow-2xl">
-                   <div className="bg-brand-secondary p-5 flex items-center gap-2">
+                
+                {/* ── Dashboard Container ── */}
+                <div className="relative bg-[#f8f6f2] rounded-[2.5rem] border border-brand-secondary/5 overflow-hidden shadow-2xl flex flex-col h-[520px]">
+                  
+                  {/* --- Dashboard Header --- */}
+                  <div className="bg-brand-secondary px-6 py-4 flex items-center justify-between border-b border-white/5">
+                    <div className="flex items-center gap-4">
                       <div className="flex gap-1.5">
-                        <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
-                        <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
-                        <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-red-400/80 shadow-sm" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/80 shadow-sm" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-green-400/80 shadow-sm" />
                       </div>
-                      <div className="h-2.5 w-40 bg-white/10 rounded-full mx-auto" />
-                   </div>
-                   <div className="p-10 space-y-8">
-                      <div className="h-10 w-full bg-brand-secondary/5 rounded-xl flex items-center px-4 gap-4">
-                        <BarChart3 className="w-4 h-4 text-brand-primary" />
-                        <div className="h-3 w-32 bg-brand-secondary/10 rounded-full" />
+                      <div className="h-4 w-px bg-white/10 mx-2" />
+                      <div className="flex items-center gap-2">
+                         <div className="w-6 h-6 rounded bg-brand-primary/20 flex items-center justify-center">
+                            <Zap className="w-3 h-3 text-brand-primary" />
+                         </div>
+                         <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest">DLLOG OPERATIONAL v2.4</span>
                       </div>
-                      <div className="grid grid-cols-2 gap-6">
-                        <div className="h-36 bg-brand-primary/5 rounded-2xl border border-brand-primary/20 p-5 shadow-sm">
-                          <TrendingUp className="w-6 h-6 text-brand-primary mb-3" />
-                          <div className="h-2.5 w-16 bg-brand-primary/20 rounded-full mb-3" />
-                          <div className="h-8 w-full bg-brand-primary/10 rounded-xl" />
+                    </div>
+                    <div className="flex items-center gap-3">
+                       <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                       <span className="text-[10px] font-bold text-green-500/80 uppercase tracking-widest">SISTEMA ONLINE</span>
+                    </div>
+                  </div>
+
+                  <div className="flex-1 flex overflow-hidden lg:flex-row flex-col">
+                    {/* --- Map Area (Left) --- */}
+                    <div className="flex-1 bg-brand-neutral relative p-4 overflow-hidden min-h-[300px]">
+                      {/* Simulated Map Background */}
+                      <div className="absolute inset-0 opacity-40 mix-blend-multiply grayscale contrast-125" 
+                           style={{ backgroundImage: 'radial-gradient(#a67c52 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+                      
+                      {/* Floating Marker Popup */}
+                      <motion.div 
+                        initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-56 bg-white rounded-xl shadow-2xl border border-brand-primary/20 overflow-hidden"
+                      >
+                        <div className="bg-brand-primary/5 px-4 py-3 border-b border-brand-primary/10 flex items-center justify-between">
+                           <span className="text-[10px] font-bold text-brand-primary uppercase tracking-wider">Carga #1502</span>
+                           <BarChart3 className="w-3 h-3 text-brand-primary" />
                         </div>
-                        <div className="h-36 bg-brand-secondary/5 rounded-2xl border border-brand-secondary/10 p-5 shadow-sm">
-                          <MapPin className="w-6 h-6 text-brand-secondary mb-3" />
-                          <div className="h-2.5 w-20 bg-brand-secondary/20 rounded-full mb-3" />
-                          <div className="h-8 w-full bg-brand-secondary/10 rounded-xl" />
+                        <div className="p-4 space-y-3">
+                           <div>
+                             <p className="text-[9px] text-brand-secondary/40 font-bold uppercase tracking-tight">Rota</p>
+                             <p className="text-[11px] font-bold text-brand-secondary leading-tight">Sorriso, MT → Santos, SP</p>
+                           </div>
+                           <div className="flex justify-between">
+                              <div>
+                                <p className="text-[9px] text-brand-secondary/40 font-bold uppercase tracking-tight">Valor/ton</p>
+                                <p className="text-[11px] font-bold text-brand-primary">R$ 315,00</p>
+                              </div>
+                              <div className="text-right">
+                                <p className="text-[9px] text-brand-secondary/40 font-bold uppercase tracking-tight">Volume</p>
+                                <p className="text-[11px] font-bold text-brand-secondary">36.5 ton</p>
+                              </div>
+                           </div>
+                           <button className="w-full py-2 bg-brand-primary text-white rounded-lg text-[10px] font-bold uppercase tracking-widest hover:bg-brand-secondary transition-colors cursor-pointer shadow-lg shadow-brand-primary/10">
+                              Aceitar Embarque
+                           </button>
+                        </div>
+                      </motion.div>
+
+                      {/* Other decorative markers */}
+                      {[
+                        { t: '20%', l: '30%' },
+                        { t: '70%', l: '15%' },
+                        { t: '40%', l: '80%' },
+                        { t: '80%', l: '85%' },
+                      ].map((m, i) => (
+                        <div key={i} className="absolute w-2 h-2 rounded-full bg-brand-primary/30 border border-brand-primary/50 animate-pulse" 
+                             style={{ top: m.t, left: m.l }} />
+                      ))}
+                    </div>
+
+                    {/* --- Sidebar (Right) --- */}
+                    <div className="w-full lg:w-72 bg-white border-l border-brand-secondary/5 p-5 space-y-6 overflow-y-auto">
+                      <div>
+                        <h4 className="text-[10px] font-black text-brand-secondary uppercase tracking-[0.2em] mb-4">Busca Operacional</h4>
+                        <div className="space-y-4">
+                           <div className="space-y-1.5">
+                             <label className="text-[9px] font-bold text-brand-secondary/50 uppercase ml-1">Origem</label>
+                             <div className="h-9 w-full bg-brand-neutral rounded-lg border border-brand-secondary/5 flex items-center px-3 gap-3">
+                               <MapPin className="w-3.5 h-3.5 text-brand-primary" />
+                               <div className="h-2 w-20 bg-brand-secondary/10 rounded-full" />
+                             </div>
+                           </div>
+                           <div className="space-y-1.5">
+                             <label className="text-[9px] font-bold text-brand-secondary/50 uppercase ml-1">Destino</label>
+                             <div className="h-9 w-full bg-brand-neutral rounded-lg border border-brand-secondary/5 flex items-center px-3 gap-3">
+                               <MapPin className="w-3.5 h-3.5 text-brand-secondary/20" />
+                               <div className="h-2 w-24 bg-brand-secondary/10 rounded-full" />
+                             </div>
+                           </div>
+                           <button className="w-full py-3 bg-brand-secondary text-white rounded-lg text-xs font-bold uppercase tracking-widest shadow-lg shadow-brand-secondary/10 hover:opacity-90 transition-opacity">
+                             Localizar Fretes
+                           </button>
                         </div>
                       </div>
-                      <div className="h-44 bg-white rounded-2xl shadow-inner border border-brand-secondary/5 p-8 space-y-5">
-                        <div className="flex justify-between items-center">
-                          <div className="h-4 w-40 bg-brand-secondary/10 rounded-full" />
-                          <div className="h-5 w-5 bg-brand-primary rounded-full animate-pulse shadow-glow shadow-brand-primary/40" />
+
+                      <div className="pt-2">
+                        <div className="flex items-center justify-between mb-4">
+                          <h4 className="text-[10px] font-black text-brand-secondary uppercase tracking-[0.2em]">Cargas Ativas</h4>
+                          <span className="w-5 h-5 bg-brand-primary/10 rounded-full flex items-center justify-center text-[9px] font-extrabold text-brand-primary">12</span>
                         </div>
-                        <div className="space-y-3">
-                          <div className="h-2.5 w-full bg-brand-secondary/5 rounded-full" />
-                          <div className="h-2.5 w-[90%] bg-brand-secondary/5 rounded-full" />
-                          <div className="h-2.5 w-[75%] bg-brand-secondary/5 rounded-full" />
+                        <div className="space-y-2">
+                           {[1, 2, 3].map(i => (
+                             <div key={i} className="p-3 rounded-xl bg-brand-neutral/50 border border-transparent hover:border-brand-primary/20 transition-all cursor-default group">
+                                <div className="flex justify-between items-start mb-2">
+                                  <div className="h-2 w-16 bg-brand-secondary/10 rounded-full" />
+                                  <div className="h-2 w-10 bg-brand-primary/20 rounded-full" />
+                                </div>
+                                <div className="h-2 w-full bg-brand-secondary/5 rounded-full mb-1.5" />
+                                <div className="h-2 w-2/3 bg-brand-secondary/5 rounded-full" />
+                             </div>
+                           ))}
                         </div>
                       </div>
-                   </div>
+                    </div>
+                  </div>
+
+                  {/* --- Footer Status Bar --- */}
+                  <div className="bg-brand-neutral border-t border-brand-secondary/5 px-6 py-2 flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <TrendingUp className="w-3 h-3 text-brand-primary" />
+                        <div className="h-1.5 w-32 bg-brand-secondary/10 rounded-full overflow-hidden">
+                           <motion.div 
+                              initial={{ width: 0 }}
+                              whileInView={{ width: '65%' }}
+                              className="h-full bg-brand-primary" 
+                           />
+                        </div>
+                        <span className="text-[8px] font-bold text-brand-secondary/40">OTIMIZAÇÃO: 65%</span>
+                      </div>
+                      <span className="text-[9px] font-black text-brand-secondary/30 uppercase">© DLLOG INFRA</span>
+                  </div>
                 </div>
               </div>
             </motion.div>

@@ -2,12 +2,12 @@
 
 @theme {
   --color-brand-primary: #a67c52;
-  --color-brand-secondary: #635a56;
+  --color-brand-secondary: #0a0a0a;
   --color-brand-neutral: #faf9f7;
   --color-brand-text: #4b4b4b;
   --color-brand-accent: #9ba3af;
   --color-brand-border: #e8e6e1;
-  --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-sans: "Outfit", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* Custom Leaflet Styling */
@@ -30,6 +30,9 @@
 }
 
 @layer base {
+  html {
+    zoom: 0.85; /* Zoom padrão: –15% */
+  }
   body {
     @apply bg-brand-neutral text-brand-text selection:bg-brand-primary/20;
   }
