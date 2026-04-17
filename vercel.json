@@ -1,7 +1,7 @@
 {
   "version": 2,
   "buildCommand": "npm run build",
-  "outputDirectory": "dist",
+  "outputDirectory": "dllog---logística-e-tecnologia-para-o-agronegócio/dist",
   "framework": "vite",
   "rewrites": [
     {
