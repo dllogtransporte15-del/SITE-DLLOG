@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import Logo from "./components/Logo";
 import MapHubs from "./components/MapHubs";
+import Partners from "./components/Partners";
 import { 
   Truck, 
   Cpu, 
@@ -397,12 +398,12 @@ export default function App() {
                 Criado por quem entende as <br/><span className="text-brand-primary">dores do dia a dia.</span>
               </h3>
               <p className="text-lg text-brand-secondary/70 mb-10 leading-relaxed">
-                Nossos sistemas não são apenas código; são a materialização de problemas reais resolvidos por especialistas com mais de 5 anos de imersão total no ecossistema logístico agropecuário.
+                Nossos sistemas não são apenas código; são a materialização de problemas reais resolvidos por especialistas com mais de 5 anos de imersão total no ecossistema logístico agro.
               </p>
               
               <div className="grid sm:grid-cols-2 gap-6 mb-12">
                 {[
-                  "Projetado por veteranos do transporte",
+                  "Projetado por experientes do transporte",
                   "Simplificação radical de processos",
                   "Gestão inteligente de fretes agro",
                   "Monitoramento de ativos em tempo real"
@@ -527,6 +528,8 @@ export default function App() {
       </section>
 
       <MapHubs />
+
+      <Partners />
 
       {/* CTA Section */}
       <section className="py-20">
