@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { motion } from "motion/react";
 import Logo from "./components/Logo";
+import ContactModal from "./components/ContactModal";
 import MapHubs from "./components/MapHubs";
 import Partners from "./components/Partners";
 import { 
@@ -20,6 +22,8 @@ import {
 } from "lucide-react";
 
 export default function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },
@@ -68,14 +72,12 @@ export default function App() {
             <a href="#servicos" className="text-brand-text hover:text-brand-primary transition-colors hover:translate-y-[-1px]">Serviços</a>
           </div>
           {/* Botão Contato à direita */}
-          <a 
-            href="https://wa.me/5564993058754" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="hidden md:inline-flex bg-gold-gradient text-brand-secondary px-6 py-2.5 rounded-full hover:brightness-110 transition-all shadow-lg shadow-brand-primary/20 text-sm font-bold tracking-wide border border-brand-primary/20"
+          <button 
+            onClick={() => setIsModalOpen(true)}
+            className="hidden md:inline-flex bg-gold-gradient text-brand-secondary px-6 py-2.5 rounded-full hover:brightness-110 transition-all shadow-lg shadow-brand-primary/20 text-sm font-bold tracking-wide border border-brand-primary/20 cursor-pointer"
           >
             Contato
-          </a>
+          </button>
         </div>
       </nav>
 
@@ -119,22 +121,18 @@ export default function App() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="https://wa.me/5564993058754"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button 
+                onClick={() => setIsModalOpen(true)}
                 className="px-9 py-4 bg-gold-gradient text-brand-secondary rounded font-bold flex items-center justify-center gap-2 hover:brightness-110 transition-all cursor-pointer shadow-xl shadow-brand-primary/30 text-base border border-brand-primary/20"
               >
                 Agendar Demonstração <ArrowRight className="w-5 h-5" />
-              </a>
-              <a 
-                href="https://wa.me/5564993058754"
-                target="_blank"
-                rel="noopener noreferrer"
+              </button>
+              <button 
+                onClick={() => setIsModalOpen(true)}
                 className="px-9 py-4 border-2 border-white/20 text-white hover:bg-white/10 rounded-xl font-bold transition-all cursor-pointer backdrop-blur-sm text-base text-center"
               >
                 Falar com Especialista
-              </a>
+              </button>
             </div>
           </motion.div>
 
@@ -419,14 +417,12 @@ export default function App() {
                 ))}
               </div>
 
-              <a 
-                href="https://wa.me/5564993058754"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 font-bold text-brand-primary hover:text-brand-secondary transition-colors group text-lg"
+              <button 
+                onClick={() => setIsModalOpen(true)}
+                className="flex items-center gap-3 font-bold text-brand-primary hover:text-brand-secondary transition-colors group text-lg cursor-pointer"
               >
                 Agendar Demonstração Gratuita <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
-              </a>
+              </button>
             </motion.div>
           </motion.div>
         </div>
@@ -541,14 +537,12 @@ export default function App() {
               <p className="text-white/80 text-lg mb-12 max-w-2xl mx-auto">
                 Deixe de lutar contra os processos e comece a dominá-los com a tecnologia DLLOG.
               </p>
-              <a 
-                href="https://wa.me/5564993058754"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button 
+                onClick={() => setIsModalOpen(true)}
                 className="inline-block px-10 py-5 bg-gold-gradient text-brand-secondary rounded font-bold text-lg hover:brightness-110 transition-all shadow-xl cursor-pointer uppercase tracking-widest border border-brand-primary/20"
               >
                 Agendar Demonstração
-              </a>
+              </button>
             </motion.div>
           </div>
         </div>
@@ -628,6 +622,11 @@ export default function App() {
           </div>
         </div>
       </motion.footer>
+
+      <ContactModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </div>
   );
 }
