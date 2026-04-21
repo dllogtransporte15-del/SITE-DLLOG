@@ -72,7 +72,7 @@ export default function App() {
             href="https://wa.me/5564993058754" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="hidden md:inline-flex bg-brand-primary text-white px-6 py-2.5 rounded-full hover:bg-brand-secondary transition-all shadow-lg shadow-brand-primary/20 text-sm font-semibold tracking-wide"
+            className="hidden md:inline-flex bg-gold-gradient text-brand-secondary px-6 py-2.5 rounded-full hover:brightness-110 transition-all shadow-lg shadow-brand-primary/20 text-sm font-bold tracking-wide border border-brand-primary/20"
           >
             Contato
           </a>
@@ -123,7 +123,7 @@ export default function App() {
                 href="https://wa.me/5564993058754"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-9 py-4 bg-brand-primary text-white rounded font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all cursor-pointer shadow-xl shadow-brand-primary/30 text-base"
+                className="px-9 py-4 bg-gold-gradient text-brand-secondary rounded font-bold flex items-center justify-center gap-2 hover:brightness-110 transition-all cursor-pointer shadow-xl shadow-brand-primary/30 text-base border border-brand-primary/20"
               >
                 Agendar Demonstração <ArrowRight className="w-5 h-5" />
               </a>
@@ -309,7 +309,7 @@ export default function App() {
                                 <p className="text-[11px] font-bold text-brand-secondary">36.5 ton</p>
                               </div>
                            </div>
-                           <button className="w-full py-2 bg-brand-primary text-white rounded-lg text-[10px] font-bold uppercase tracking-widest hover:bg-brand-secondary transition-colors cursor-pointer shadow-lg shadow-brand-primary/10">
+                           <button className="w-full py-2 bg-gold-gradient text-brand-secondary rounded-lg text-[10px] font-bold uppercase tracking-widest hover:brightness-110 transition-all cursor-pointer shadow-lg shadow-brand-primary/10 border border-brand-primary/20">
                               Aceitar Embarque
                            </button>
                         </div>
@@ -545,7 +545,7 @@ export default function App() {
                 href="https://wa.me/5564993058754"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-10 py-5 bg-brand-primary text-white rounded font-bold text-lg hover:opacity-90 transition-all shadow-xl cursor-pointer uppercase tracking-widest"
+                className="inline-block px-10 py-5 bg-gold-gradient text-brand-secondary rounded font-bold text-lg hover:brightness-110 transition-all shadow-xl cursor-pointer uppercase tracking-widest border border-brand-primary/20"
               >
                 Agendar Demonstração
               </a>
