@@ -4,6 +4,7 @@ import Logo from "./components/Logo";
 import ContactModal from "./components/ContactModal";
 import MapHubs from "./components/MapHubs";
 import Partners from "./components/Partners";
+import Pricing from "./components/Pricing";
 import { 
   Truck, 
   Cpu, 
@@ -69,6 +70,7 @@ export default function App() {
             <a href="#home" className="text-brand-text hover:text-brand-primary transition-colors hover:translate-y-[-1px]">Início</a>
             <a href="#sobre" className="text-brand-text hover:text-brand-primary transition-colors hover:translate-y-[-1px]">Sobre</a>
             <a href="#sistema" className="text-brand-text hover:text-brand-primary transition-colors hover:translate-y-[-1px]">Sistema</a>
+            <a href="#precos" className="text-brand-text hover:text-brand-primary transition-colors hover:translate-y-[-1px]">Preços</a>
             <a href="#servicos" className="text-brand-text hover:text-brand-primary transition-colors hover:translate-y-[-1px]">Serviços</a>
           </div>
           {/* Botão Contato à direita */}
@@ -427,6 +429,8 @@ export default function App() {
           </motion.div>
         </div>
       </section>
+      
+      <Pricing />
 
       {/* Connectivity Banner */}
       <section className="bg-brand-secondary py-12">
@@ -602,6 +606,7 @@ export default function App() {
                 <a href="#home" className="hover:text-brand-primary transition-colors">Início</a>
                 <a href="#sobre" className="hover:text-brand-primary transition-colors">Quem Somos</a>
                 <a href="#sistema" className="hover:text-brand-primary transition-colors">Tecnologia</a>
+                <a href="#precos" className="hover:text-brand-primary transition-colors">Preços</a>
                 <a href="#servicos" className="hover:text-brand-primary transition-colors">Serviços</a>
               </div>
             </div>
